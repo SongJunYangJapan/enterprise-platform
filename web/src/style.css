@@ -1,0 +1,15 @@
+body { margin: 0; background: #f3f6fa; font-family: Inter, "Microsoft YaHei", sans-serif; color: #172033; }
+.layout { min-height: 100vh; }
+.header { display: flex; justify-content: space-between; align-items: center; background: #102d4d; color: white; }
+.header strong { font-size: 18px; }
+.header span { font-size: 13px; opacity: .85; }
+.main { width: min(1200px, 100%); margin: 0 auto; box-sizing: border-box; }
+h1 { margin-bottom: 5px; }
+.intro { color: #617087; margin-bottom: 25px; }
+.actions { display: flex; gap: 12px; }
+.actions .el-input { max-width: 440px; }
+.results { margin-top: 20px; }
+.history-item { display: flex; gap: 15px; align-items: center; padding: 14px 4px; border-bottom: 1px solid #e6ebf1; cursor: pointer; }
+.history-item:hover { color: #2176c1; }
+.history-item small { margin-left: auto; color: #77869a; }
+@media (max-width: 600px) { .header span { font-size: 11px; } .actions { flex-wrap: wrap; } .results .el-col + .el-col { margin-top: 18px; } }

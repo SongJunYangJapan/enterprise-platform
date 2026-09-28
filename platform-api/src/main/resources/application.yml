@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: platform-api
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/enterprise_platform?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai}
+    username: ${DB_USER:platform}
+    password: ${DB_PASSWORD:platform_dev}
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

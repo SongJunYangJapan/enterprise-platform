@@ -28,7 +28,8 @@ async function create() {
     const { data } = await api.post<{ diagnosisId: number }>('/api/diagnoses', { circuitId: circuitId.value.trim() })
     const result = await api.get<Diagnosis>(`/api/diagnoses/${data.diagnosisId}`)
     selected.value = result.data
-    // Keep the last circuit in the URL so browser refresh can restore history.
+    // 把最近一次使用的 circuitId 写进浏览器地址栏，
+    // 这样刷新页面后能根据 URL 里的参数自动恢复查询历史记录。
     window.history.replaceState(null, '', `?circuitId=${encodeURIComponent(circuitId.value.trim())}`)
     await search()
     ElMessage.success('诊断记录已创建')

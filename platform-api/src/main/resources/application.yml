@@ -5,8 +5,8 @@ spring:
     name: platform-api
   datasource:
     url: ${DB_URL:jdbc:mysql://localhost:3306/enterprise_platform?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai}
-    username: ${DB_USER:platform}
-    password: ${DB_PASSWORD:platform_dev}
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD:}
 mybatis:
   configuration:
     map-underscore-to-camel-case: true

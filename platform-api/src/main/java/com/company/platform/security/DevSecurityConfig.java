@@ -18,7 +18,8 @@ import org.springframework.web.filter.OncePerRequestFilter;
 @Configuration
 @Profile("dev")
 public class DevSecurityConfig {
-    // DEV ONLY: no account store or password. Never enable this profile outside local development.
+    // 仅限开发环境：没有真实的账号体系或密码，所有请求都模拟成 dev.user 登录。
+    // 除本地开发外，任何环境都绝不能启用这个 profile。
     @Bean
     SecurityFilterChain devSecurity(HttpSecurity http) throws Exception {
         return http.csrf(csrf -> csrf.disable())

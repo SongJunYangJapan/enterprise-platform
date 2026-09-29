@@ -13,8 +13,9 @@ public class DiagnosisService {
     private final DiagnosisMapper mapper;
     public DiagnosisService(DiagnosisMapper mapper) { this.mapper = mapper; }
 
-    // This transaction is the orchestration seam: replace each placeholder with
-    // an adapter call later, recording status/output/error in diagnosis_step.
+    // 这个事务是诊断流程的“编排接缝”：目前只创建占位步骤，
+    // 后续要把每个占位步骤替换成真实的适配器调用（BOSS / LibreNMS / Dify 等），
+    // 并把每一步的状态、输出、错误信息记录到 diagnosis_step 表中。
     @Transactional
     public DiagnosisView create(String circuitId, String username) {
         var run = new DiagnosisRun();

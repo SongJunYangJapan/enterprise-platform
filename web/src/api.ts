@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-// Set VITE_API_BASE_URL for separate deployment. Vite proxies /api locally.
+// 前后端分开部署时，设置环境变量 VITE_API_BASE_URL 指向后端地址。
+// 本地开发不用设：Vite 会自动把 /api 请求代理到后端（见 vite.config.ts）。
 export const api = axios.create({ baseURL: import.meta.env.VITE_API_BASE_URL || '' })
 
 export interface Step {
